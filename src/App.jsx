@@ -53,16 +53,20 @@ function App() {
       setPrivateClub("");
     }
   };
+  const title = "{ diablo_con_vestido: tabulador_ }";
 
+  console.log(currency);
   return (
     <>
+      <h1 className="text-2xl text-gray-300 text-center p-4">{title}</h1>
       <form
-        className="flex flex-col border-2 border-amber-200 items-center text-center"
+        className="flex flex-col bg-gray-300 border-4 border-pink-500 items-center text-center w-fit p-8 rounded-2xl mx-auto text-md"
         onSubmit={handleClientForm}
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="name">Type your name and last name:</label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="name"
             id="name"
@@ -71,22 +75,30 @@ function App() {
             required
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="currency">Select your type of currency:</label>
-          <input
-            type="text"
+          <select
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             name="currency"
             id="currency"
             value={currency}
             onChange={(e) => setCurrency(e.target.value)}
             required
-          />
+          >
+            <option value="" disabled>
+              -- Please select --
+            </option>
+            <option value="EUR">EUR (Euro)</option>
+            <option value="USD">USD (United States dolar)</option>
+            <option value="MXN">MXN (Mexican peso)</option>
+          </select>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="netIncome">
             Select a monthly net income based on your salary:
           </label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="netIncome"
             id="netIncome"
@@ -95,9 +107,10 @@ function App() {
             required
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="rent">Do you pay rent?</label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="rent"
             id="rent"
@@ -106,11 +119,12 @@ function App() {
             required
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="medicalInsurance">
             Select the type of medical insurance that you currently own
           </label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="medicalInsurance"
             id="medicalInsurance"
@@ -119,12 +133,13 @@ function App() {
             required
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="familySupport">
             Do you have access to family financial support in case of an
             emergency?
           </label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="familySupport"
             id="familySupport"
@@ -133,11 +148,12 @@ function App() {
             required
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="privateClub">
             Are you a part of some kind of private club?
           </label>
           <input
+            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
             type="text"
             name="privateClub"
             id="privateClub"
@@ -146,7 +162,9 @@ function App() {
             required
           />
         </div>
-        <button className="cursor-pointer">Submit</button>
+        <button className="cursor-pointer bg-pink-400 text-xl py-2 px-4 my-2 rounded-xl">
+          Submit
+        </button>
       </form>
     </>
   );
