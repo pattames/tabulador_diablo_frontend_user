@@ -55,7 +55,6 @@ function App() {
   };
   const title = "{ diablo_con_vestido: tabulador_ }";
 
-  console.log(currency);
   return (
     <>
       <h1 className="text-2xl text-gray-300 text-center p-4">{title}</h1>
@@ -97,28 +96,52 @@ function App() {
           <label htmlFor="netIncome">
             Select a monthly net income based on your salary:
           </label>
-          <input
+          <select
             className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
-            type="text"
             name="netIncome"
             id="netIncome"
             value={netIncome}
             onChange={(e) => setNetIncome(e.target.value)}
             required
-          />
+          >
+            <option value="" disabled>
+              -- Please select --
+            </option>
+            {currency === "EUR" && <option value="1000">1,000 euros</option>}
+            {currency === "USD" && <option value="1500">1,500 dolars</option>}
+            {currency === "MXN" && <option value="20000">20,000 pesos</option>}
+          </select>
         </div>
-        <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
-          <label htmlFor="rent">Do you pay rent?</label>
-          <input
-            className="bg-gray-400 rounded-xl p-2 text-fuchsia-500 font-semibold"
-            type="text"
-            name="rent"
-            id="rent"
-            value={rent}
-            onChange={(e) => setRent(e.target.value)}
-            required
-          />
-        </div>
+        <fieldset className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
+          <legend>Do you pay rent?</legend>
+          <div className="flex justify-center gap-10">
+            <div className="flex flex-col">
+              <input
+                type="radio"
+                name="rent"
+                id="rent-yes"
+                value="Yes"
+                //checked if rent is initially equal to "Yes". Keeps everything in sync
+                checked={rent === "Yes"}
+                onChange={(e) => setRent(e.target.value)}
+                //only one required per radio combo
+                required
+              />
+              <label htmlFor="rent-yes">Yes</label>
+            </div>
+            <div className="flex flex-col">
+              <input
+                type="radio"
+                name="rent"
+                id="rent-no"
+                value="No"
+                checked={rent === "No"}
+                onChange={(e) => setRent(e.target.value)}
+              />
+              <label htmlFor="rent-no">No</label>
+            </div>
+          </div>
+        </fieldset>
         <div className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <label htmlFor="medicalInsurance">
             Select the type of medical insurance that you currently own
