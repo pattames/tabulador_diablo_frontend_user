@@ -21,7 +21,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await fetch(`http://localhost:9999/invalid-endpoint/`, {
+      const response = await fetch(`http://localhost:8080/client/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
