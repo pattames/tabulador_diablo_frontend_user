@@ -124,8 +124,8 @@ function App() {
         </fieldset>
         <fieldset className="flex flex-col border-2 border-gray-500 rounded-sm p-4 gap-2 my-3">
           <legend className="px-2">Do you pay rent?</legend>
-          <div className="flex justify-center gap-10">
-            <div className="flex flex-col items-center">
+          <div className="flex justify-center gap-15">
+            <div className="flex flex-col">
               <div className="grid place-items-center">
                 <input
                   className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
@@ -150,14 +150,24 @@ function App() {
               <label htmlFor="rent-yes">Yes</label>
             </div>
             <div className="flex flex-col">
-              <input
-                type="radio"
-                name="rent"
-                id="rent-no"
-                value="No"
-                checked={rent === "No"}
-                onChange={(e) => setRent(e.target.value)}
-              />
+              <div className="grid place-items-center">
+                <input
+                  className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
+                  type="radio"
+                  name="rent"
+                  id="rent-no"
+                  value="No"
+                  checked={rent === "No"}
+                  onChange={(e) => setRent(e.target.value)}
+                />
+                {rent === "No" && (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    size="sm"
+                    className="col-start-1 row-start-1 z-0 mx-auto text-fuchsia-500"
+                  />
+                )}
+              </div>
               <label htmlFor="rent-no">No</label>
             </div>
           </div>
@@ -187,28 +197,48 @@ function App() {
             Do you have access to family financial support in case of an
             emergency?
           </legend>
-          <div className="flex justify-center gap-10">
+          <div className="flex justify-center gap-15">
             <div className="flex flex-col">
-              <input
-                type="radio"
-                name="familySupport"
-                id="familySupport-yes"
-                value="Yes"
-                checked={familySupport === "Yes"}
-                onChange={(e) => setFamilySupport(e.target.value)}
-                required
-              />
+              <div className="grid place-items-center">
+                <input
+                  className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
+                  type="radio"
+                  name="familySupport"
+                  id="familySupport-yes"
+                  value="Yes"
+                  checked={familySupport === "Yes"}
+                  onChange={(e) => setFamilySupport(e.target.value)}
+                  required
+                />
+                {familySupport === "Yes" && (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    size="sm"
+                    className="col-start-1 row-start-1 z-0 mx-auto text-fuchsia-500"
+                  />
+                )}
+              </div>
               <label htmlFor="familySupport-yes">Yes</label>
             </div>
             <div className="flex flex-col">
-              <input
-                type="radio"
-                name="familySupport"
-                id="familySupport-no"
-                value="No"
-                checked={familySupport === "No"}
-                onChange={(e) => setFamilySupport(e.target.value)}
-              />
+              <div className="grid place-items-center">
+                <input
+                  className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
+                  type="radio"
+                  name="familySupport"
+                  id="familySupport-no"
+                  value="No"
+                  checked={familySupport === "No"}
+                  onChange={(e) => setFamilySupport(e.target.value)}
+                />
+                {familySupport === "No" && (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    size="sm"
+                    className="col-start-1 row-start-1 z-0 mx-auto text-fuchsia-500"
+                  />
+                )}
+              </div>
               <label htmlFor="familySupport-no">No</label>
             </div>
           </div>
@@ -218,28 +248,48 @@ function App() {
             Are you a part of some kind of private club like an athletic club,
             country club, etc.?
           </legend>
-          <div className="flex justify-center gap-10">
+          <div className="flex justify-center gap-15">
             <div className="flex flex-col">
-              <input
-                type="radio"
-                name="privateClub"
-                id="privateClub-yes"
-                value="Yes"
-                checked={privateClub === "Yes"}
-                onChange={(e) => setPrivateClub(e.target.value)}
-                required
-              />
+              <div className="grid place-items-center">
+                <input
+                  className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
+                  type="radio"
+                  name="privateClub"
+                  id="privateClub-yes"
+                  value="Yes"
+                  checked={privateClub === "Yes"}
+                  onChange={(e) => setPrivateClub(e.target.value)}
+                  required
+                />
+                {privateClub === "Yes" && (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    size="sm"
+                    className="col-start-1 row-start-1 z-0 mx-auto text-fuchsia-500"
+                  />
+                )}
+              </div>
               <label htmlFor="privateClub-yes">Yes</label>
             </div>
             <div className="flex flex-col">
-              <input
-                type="radio"
-                name="privateClub"
-                id="privateClub-no"
-                value="No"
-                checked={privateClub === "No"}
-                onChange={(e) => setPrivateClub(e.target.value)}
-              />
+              <div className="grid place-items-center">
+                <input
+                  className="appearance-none w-5 h-5 border-2 border-fuchsia-500 col-start-1 row-start-1 z-10"
+                  type="radio"
+                  name="privateClub"
+                  id="privateClub-no"
+                  value="No"
+                  checked={privateClub === "No"}
+                  onChange={(e) => setPrivateClub(e.target.value)}
+                />
+                {privateClub === "No" && (
+                  <FontAwesomeIcon
+                    icon={faCheck}
+                    size="sm"
+                    className="col-start-1 row-start-1 z-0 mx-auto text-fuchsia-500"
+                  />
+                )}
+              </div>
               <label htmlFor="privateClub-no">No</label>
             </div>
           </div>
