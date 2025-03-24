@@ -294,28 +294,22 @@ function App() {
             </div>
           </div>
         </fieldset>
-        {loading && (
-          <div className="flex justify-center my-2">
-            <PacmanLoader color="#fb64b6" />
-          </div>
-        )}
-        {error && (
-          <div className="flex justify-center my-2">
+        <div className="flex justify-center my-2">
+          {loading && <PacmanLoader color="#fb64b6" />}
+          {error && (
             <p className="text-xl font-semibold text-red-600">Error: {error}</p>
-          </div>
-        )}
-        {submitted && (
-          <div className="flex justify-center my-2">
+          )}
+          {submitted && (
             <p className="text-2xl font-semibold text-green-600">
               Form submitted!
             </p>
-          </div>
-        )}
-        {!loading && !submitted && !error && (
-          <button className="cursor-pointer bg-pink-400 text-xl py-2 px-4 my-2 rounded-xl">
-            Submit
-          </button>
-        )}
+          )}
+          {!loading && !submitted && !error && (
+            <button className="cursor-pointer bg-pink-400 text-xl py-2 px-4 rounded-xl">
+              Submit
+            </button>
+          )}
+        </div>
       </form>
     </>
   );
