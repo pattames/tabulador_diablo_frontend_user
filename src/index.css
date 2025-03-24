@@ -3,3 +3,16 @@
 html {
   background-color: var(--color-gray-700);
 }
+
+@theme {
+  --animate-borderGlow: borderGlow 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @keyframes borderGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 5px #ec4899;
+    }
+    50% {
+      box-shadow: 0 0 40px #ec4899;
+    }
+  }
+}
